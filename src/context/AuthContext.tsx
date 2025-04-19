@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 import { User, AuthContextType } from '../types';
 import { login as loginApi, signup as signupApi, logout as logoutApi, getCurrentUser } from '../services/auth';
 
-// Create context with default values
+// Creating context with default values
 const AuthContext = createContext<AuthContextType>({
   user: null,
   loading: true,
@@ -17,7 +17,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Check for existing user session on load
+  // This code is to Check for existing user session on load. 
   useEffect(() => {
     const checkAuth = () => {
       try {
@@ -32,7 +32,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     checkAuth();
   }, []);
-
+// This code is for the login
   const login = async (email: string, password: string) => {
     setLoading(true);
     setError(null);
@@ -47,7 +47,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setLoading(false);
     }
   };
-
+// This code is for the signup
   const signup = async (name: string, email: string, password: string) => {
     setLoading(true);
     setError(null);
@@ -80,7 +80,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
-// Custom hook to use the auth context
+// Creating the Custom hook to use the auth context (Kya karee karna padta hai)
 export const useAuth = () => {
   const context = useContext(AuthContext);
   
