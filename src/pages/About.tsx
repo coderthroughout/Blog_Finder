@@ -96,7 +96,7 @@ const AboutPage: React.FC = () => {
                 name: 'Anurag Jha',
                 role: 'Founder & CEO',
                 desc: 'Former journalist and tech enthusiast who built InkFlow to empower modern storytelling.',
-                img: 'https://drive.google.com/file/d/1Yb2rAzFh0Q3jvuz3rJDvLefK6nUPDbct/view?usp=drive_link?auto=compress&cs=tinysrgb&w=300',
+                img: 'https://drive.google.com/file/d/1Yb2rAzFh0Q3jvuz3rJDvLefK6nUPDbct/view?usp=drive_link',
               },
             ].map((member, index) => (
               <div key={index} className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-sm text-center">
