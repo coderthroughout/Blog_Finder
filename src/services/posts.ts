@@ -1,17 +1,17 @@
 import { Post, Comment } from '../types';
 import { posts, comments, getAuthor, featuredPosts as mockFeaturedPosts } from '../utils/mockData';
 
-// Mock delay to simulate network request
+
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
-// In-memory storage for posts and comments (simulating a database)
+
 let postsData = [...posts];
 let commentsData = [...comments];
 
 export const getAllPosts = async (): Promise<Post[]> => {
   await delay(800);
   
-  // Add author data to each post
+  
   return postsData.map(post => ({
     ...post,
     author: getAuthor(post.authorId),
@@ -99,14 +99,14 @@ export const deletePost = async (id: string, authorId: string): Promise<boolean>
     throw new Error('Post not found');
   }
   
-  // Check if the user is the author of the post
+
   if (postsData[postIndex].authorId !== authorId) {
     throw new Error('Unauthorized');
   }
   
   postsData = postsData.filter(p => p.id !== id);
   
-  // Also delete associated comments
+
   commentsData = commentsData.filter(c => c.postId !== id);
   
   return true;
