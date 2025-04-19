@@ -93,22 +93,10 @@ const AboutPage: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {[
               {
-                name: 'Alexander Chen',
+                name: 'Anurag Jha',
                 role: 'Founder & CEO',
                 desc: 'Former journalist and tech enthusiast who built InkFlow to empower modern storytelling.',
                 img: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300',
-              },
-              {
-                name: 'Sarah Johnson',
-                role: 'Head of Content',
-                desc: 'Bestselling author shaping our editorial vision and nurturing community-led narratives.',
-                img: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300',
-              },
-              {
-                name: 'Marcus Rivera',
-                role: 'CTO',
-                desc: 'Full-stack engineer and UX expert passionate about intuitive digital writing tools.',
-                img: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300',
               },
             ].map((member, index) => (
               <div key={index} className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-sm text-center">
