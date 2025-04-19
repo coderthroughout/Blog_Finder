@@ -1,7 +1,7 @@
 import { User } from '../types';
 import { users } from '../utils/mockData';
 
-
+// Enter your Auth tokens, varna nhi chalega
 const AUTH_TOKEN_KEY = 'inkflow_auth_token';
 const AUTH_USER_KEY = 'inkflow_auth_user';
 
@@ -14,20 +14,20 @@ export const getCurrentUser = (): User | null => {
 };
 
 export const login = async (email: string, password: string): Promise<User> => {
-  // Simulate API request
+  // API Request hai aur delay bhi
   await delay(800);
   
-  // Find user with matching email (in a real app, this would check password hash too)
+  // Simple user jo same hai uske liye
   const user = users.find(u => u.email.toLowerCase() === email.toLowerCase());
   
   if (!user) {
     throw new Error('Invalid email or password');
   }
   
-  // In a real app, this would be a JWT token from the server
+
   const mockToken = `mock-token-${user.id}-${Date.now()}`;
   
-  // Store auth data
+  // Aree bhai we need to storee the key so auth store kar raha hu
   localStorage.setItem(AUTH_TOKEN_KEY, mockToken);
   localStorage.setItem(AUTH_USER_KEY, JSON.stringify(user));
   
@@ -35,17 +35,17 @@ export const login = async (email: string, password: string): Promise<User> => {
 };
 
 export const signup = async (name: string, email: string, password: string): Promise<User> => {
-  // Simulate API request
+  
   await delay(1000);
   
-  // Check if email already exists
+  // Checking if email already exists
   const existingUser = users.find(u => u.email.toLowerCase() === email.toLowerCase());
   
   if (existingUser) {
     throw new Error('Email already in use');
   }
   
-  // Create new user (in a real app, this would store in database)
+  // Creating new user, karna padega
   const newUser: User = {
     id: `${users.length + 1}`,
     name,
